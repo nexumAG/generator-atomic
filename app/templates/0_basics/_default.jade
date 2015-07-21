@@ -11,15 +11,8 @@ html
     meta(name='viewport', content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no")
     link(type="text/plain" rel="author" href="#{path}humans.txt")
 
-    if level == 0
-      // build:css 0_basics/main.css
-    else if level == 1
-      // build:css ../0_basics/main.css
-    else
-      // build:css ../../0_basics/main.css
-
     link(href='#{path}0_basics/main.css', rel='stylesheet')
-    // endbuild
+
     noscript
       link(href='#{path}0_basics/nojs.css', rel='stylesheet')
     <!--[if lte IE 9]>
@@ -30,14 +23,14 @@ html
     block content
     +footer
     if level == 0
-      // build:js({.,app}) 0_basics/controller.js
+      // build:js({.,.tmp}) 0_basics/controller.js
     else if level == 1
-      // build:js({.,app}) ../0_basics/controller.js
+      // build:js({.,.tmp}) ../0_basics/controller.js
     else
-      // build:js({.,app}) ../../0_basics/controller.js
+      // build:js({.,.tmp}) ../../0_basics/controller.js
 
     // bower:js
-    script(src='/bower_components/jquery/dist/jquery.js')
+    script(src='/jquery/dist/jquery.js')
     // endbower
 
     // [injector:js]

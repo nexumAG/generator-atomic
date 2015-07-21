@@ -62,6 +62,7 @@ Generator.prototype.promptConfig = function promptConfig() {
 Generator.prototype.sourceFiles = function sourceFiles() {
 
   this.copy('module.jade', 'app/5_pages/'+ this.modulename +'.jade');
+  this.copy('module.spec', 'app/5_pages/'+ this.modulename +'.spec');
 
 };
 

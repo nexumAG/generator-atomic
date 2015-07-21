@@ -10,9 +10,9 @@ module.exports = {
   dist: {
     files: [{
       expand: true,
-      cwd: '<%= folders.tmp %>/styles',
+      cwd: '<%= folders.tmp %>/0_basics',
       src: '{,*/}*.css',
-      dest: '<%= folders.tmp %>/styles'
+      dest: '<%= folders.tmp %>/0_basics'
     }]
   }
 };

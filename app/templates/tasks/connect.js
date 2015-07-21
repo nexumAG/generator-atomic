@@ -15,7 +15,8 @@ module.exports = {
       livereload: true,
       base: [
         '<%= folders.tmp %>',
-        '<%= folders.app %>'
+        '<%= folders.app %>',
+        'bower_components'
       ]
     }
   },
@@ -27,6 +28,16 @@ module.exports = {
         '<%= folders.dist %>'
       ],
       livereload: false
+    }
+  },
+  test: {
+    options: {
+      port: 9001,
+      base: [
+        '<%= folders.dist %>'
+      ],
+      livereload: false,
+      open: false
     }
   }
 };

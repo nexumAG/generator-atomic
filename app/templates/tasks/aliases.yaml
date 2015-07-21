@@ -5,32 +5,39 @@ serve:
   - clean:server
   - injector
   - wiredep
-  - parallelize:jade
   - less:server
-  - babel
   - autoprefixer
+  - babel
+  - parallelize:jade
   - connect:server
   - watch
 
 build:
-  - clean:build
-  - injector
-  - wiredep
-  - parallelize:jade
-  - less:dist
-  - babel
-  - autoprefixer
-  - copy:dist
-  - useminPrepare
-  - concat
-  - combine_mq
-  - cssmin
-  - uglify
-  - imagemin
-  - svgmin
-  - htmlmin
-  - rev
-  - usemin
+   - clean:build
+   - injector
+   - wiredep
+
+   - babel
+   - less:dist
+   - autoprefixer
+   - parallelize:jade
+
+   - copy:dist
+   - useminPrepare
+
+   - concat
+   - uglify
+
+   - imagemin
+   - svgmin
+   - htmlmin
+   - rev
+   - usemin
+
+test:
+  - build
+  - connect:test
+  - galen:local
 
 release:
   - bump-only

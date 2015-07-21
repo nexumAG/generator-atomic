@@ -18,10 +18,10 @@ module.exports = {
       ]
     }, {
       expand: true,
-      cwd: '<%= folders.app %>',
-      dest: '<%= folders.tmp %>',
+      cwd: '<%= folders.tmp %>',
+      dest: '<%= folders.dist %>',
       src: [
-        'scripts/{,*/}*js', 'bower_components/**/*js'
+        '**/*.css'
       ]
     }]
   }

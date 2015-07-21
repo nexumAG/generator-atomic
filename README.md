@@ -3,10 +3,12 @@
 > This [Yeoman](http://yeoman.io) generator scaffolds an atomic-design templating framework based on the markup language [Jade](http://http://jade-lang.com/).
 > It comes bundled with [BabelJS](http://babeljs.io/) for ES6 support, [Twitter Bootstrap](http://getbootstrap.com/), [LESS](http://lesscss.org/), ESLint and a build-in Livereload Server. 
 > Several Subgenerators (atom, molecule, organism...) help you during your project to quickly add new modules and link them properly.
-> [Grunt](http://gruntjs.com/) helps you to automate your workflow with several helpful tasks like "build", "release" and "serve" (default)
+> [Grunt](http://gruntjs.com/) helps you to automate your workflow with several helpful tasks like "build", "release" and "serve" (default). For automated Layout-testing you can use the [Galen Framework](http://galenframework.com/).
 
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/nexumAG/generator-atomic.svg)](http://isitmaintained.com/project/nexumAG/generator-atomic "Average time to resolve an issue")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/nexumAG/generator-atomic.svg)](http://isitmaintained.com/project/nexumAG/generator-atomic "Percentage of issues still open")
 
-## Getting Started
+## Installation
 
 ### Install Yeoman
 
@@ -14,7 +16,7 @@
 npm install -g yo
 ```
 
-### Yeoman Generator
+### Install generator-atomic
 
 To install generator-atomic from npm, run:
 
@@ -22,13 +24,15 @@ To install generator-atomic from npm, run:
 npm install -g generator-atomic
 ```
 
-Finally, initiate the generator:
+## Usage
+
+Initiate the generator in your project folder:
 
 ```bash
 yo atomic
 ```
 
-Other available generators:
+To generate modules use following commands in your project folder:
 
 ```bash
 yo atomic:atom
@@ -50,6 +54,51 @@ yo atomic:template
 yo atomic:page
 ```
 
+For test with Galen use following command:
+
+```bash
+grunt test
+```
+### Directory Layout
+```
+├── □ app                                   
+|   ├── □ 0_basics                        
+|   |   ├── _default.jade                 # HTML Mastertemplate (HTML Header/Footer)
+|   |   ├── controller.js                 # Javascript Main Controller 
+|   |   ├── de.json                       # Content JSON  
+|   |   ├── main.less                     # Less-file for Module imports
+|   |   ├── variables.less                # Less Variables
+|   |   ├── nojs.less                     # Fallback CSS for Browsers without JS
+|   |   ├── ie9.less                      # Fallback CSS for IE9
+|   |   ├── □ bootstrap                   # Twitter bootstrap
+|   |   └── □ nx helpers                  # Less Helper Classes
+|   ├── □ 1_atoms                         # Folder for Atoms
+|   ├── □ 2_molecules                     # Folder for Molecules
+|   ├── □ 3_organisms                     # Folder for Organisms
+|   ├── □ 4_templates                     # Folder for Templates
+|   └── □ 5_templates                     # Folder for Templates
+```
+
+### Module Directory Layout
+Each Module (atom, molecule, organism...) has this Directory Layout:
+```
+|   |   ├── index.jade                  # Module Overview Page
+|   |   └── □ breadcrumb                  
+|   |       ├── breadcrumb.jade         # Demo: showcase the Module in all available versions
+|   |       ├── _breadcrumb.jade        # Markup: Jade Mixins (with _underscore)
+|   |       ├── breadcrumb.js           # Script: ES2015 through BabelJS (not in atoms, templates and pages)
+|   |       ├── breadcrumb.less         # Styles: LESS precompiler
+|   |       └── breadcrumb.spec         # Test: Galen Specfile for Layout Tests
+```
+## Contributing
+
+1. Fork it
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -am 'feat(filename): add my-new-feature...'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request
+
+Thank you for your time, we appreciate it.
 
 ## License
 

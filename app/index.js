@@ -99,7 +99,12 @@ Generator.prototype.gruntfile = function gruntfile() {
   this.copy('tasks/parallelize.js', 'tasks/parallelize.js');
   this.copy('tasks/eslint.js', 'tasks/eslint.js');
   this.copy('tasks/combine_mq.js', 'tasks/combine_mq.js');
+  this.copy('tasks/galen.js', 'tasks/galen.js');
 
+};
+
+Generator.prototype.tests = function tests() {
+  this.directory('tests', 'tests');
 };
 
 

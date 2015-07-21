@@ -5,7 +5,7 @@
  * @see {@link http://github.com/documentation|GitHub}
  */
 var <%= namespace %> = <%= namespace %> || {}; // get the apps namespace
-<%= namespace %>.<%= modulename %> = (function () {
+<%= namespace %>.<%= modulenameCamelized %> = (function () {
 
   /**
    * @function privateFunctionExample
@@ -37,5 +37,5 @@ var <%= namespace %> = <%= namespace %> || {}; // get the apps namespace
 }());
 
 /** Example Usage:
-  <%= namespace %>.<%= modulename %>.publicFunctionExample();
+  <%= namespace %>.<%= modulenameCamelized %>.publicFunctionExample();
 */

@@ -1,6 +1,7 @@
 'use strict';
 var util = require('util');
 var path = require('path');
+var camelize = require('camelize');
 var s = require("underscore.string");
 var yeoman = require('yeoman-generator');
 
@@ -50,6 +51,7 @@ Generator.prototype.promptConfig = function promptConfig() {
     this.appname   = this.config.get('appname');
     this.projectName = this.config.get('projectName');
     this.namespace = this.config.get('namespace');
+    this.modulenameCamelized = camelize(this.modulename);
 
     this.config.set('author', this.author);
 
@@ -65,6 +67,7 @@ Generator.prototype.sourceFiles = function sourceFiles() {
   this.copy('_module.jade', 'app/3_organisms/'+ this.modulename +'/_'+ this.modulename +'.jade');
   this.copy('module.less', 'app/3_organisms/'+ this.modulename +'/'+ this.modulename +'.less');
   this.copy('module.js', 'app/3_organisms/'+ this.modulename +'/'+ this.modulename +'.js');
+  this.copy('module.spec', 'app/3_organisms/'+ this.modulename +'/'+ this.modulename +'.spec');
 
 };
 

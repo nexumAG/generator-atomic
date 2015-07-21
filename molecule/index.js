@@ -1,6 +1,7 @@
 'use strict';
 var util = require('util');
 var path = require('path');
+var camelize = require('camelize');
 var s = require("underscore.string");
 var yeoman = require('yeoman-generator');
 
@@ -44,6 +45,8 @@ Generator.prototype.promptConfig = function promptConfig() {
 
   this.prompt(prompts, function(props) {
     this.modulename = props.modulename || this.modulename;
+    this.modulenameCamelized = camelize(this.modulename);
+
     this.author = props.author || this.config.get('author');
     this.description = props.description || this.description || 'Molecule description here';
 
@@ -65,6 +68,7 @@ Generator.prototype.sourceFiles = function sourceFiles() {
   this.copy('_module.jade', 'app/2_molecules/'+ this.modulename +'/_'+ this.modulename +'.jade');
   this.copy('module.less', 'app/2_molecules/'+ this.modulename +'/'+ this.modulename +'.less');
   this.copy('module.js', 'app/2_molecules/'+ this.modulename +'/'+ this.modulename +'.js');
+  this.copy('module.spec', 'app/2_molecules/'+ this.modulename +'/'+ this.modulename +'.spec');
 
 };
 

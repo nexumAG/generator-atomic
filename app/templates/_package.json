@@ -23,6 +23,7 @@
     "grunt-contrib-uglify": "^0.7.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-conventional-changelog": "^1.1.0",
+    "grunt-galen": "^0.5.5",
     "grunt-injector": "^0.6.0",
     "grunt-eslint": "^15.0.0",
     "grunt-newer": "^1.1.0",

@@ -98,5 +98,23 @@ module.exports = {
         '!<%= folders.app %>/bower_components/**'
       ]
     }
+  },
+  specs: {
+    options: {
+      transform: function(filePath) {
+        filePath = filePath.replace('/app/', '/');
+        htmlPath = filePath.replace('.spec', '.html');
+        linkTitle = filePath.split('/').pop().replace('.spec', '');
+        linkTitle = linkTitle.charAt(0).toUpperCase() + linkTitle.substr(1);
+        return "test('"+ linkTitle + " on ' + device.deviceName, function () { gl.openPage(device, config.getProjectPage()+'" + htmlPath + "'); gl.runSpecFile(device, 'app" + filePath + "', device.tags);});";
+      },
+      starttag: '// [injector:spec]',
+      endtag: '// [endinjector]'
+    },
+    files: {
+      'tests/atomic.test.js': [
+        '<%= folders.app %>/{,*/,**/}*.spec'
+      ]
+    }
   }
 };

@@ -118,7 +118,7 @@ Generator.prototype.sourceFiles = function sourceFiles() {
   this.template('0_basics/main.less', 'app/0_basics/main.less');
   this.template('0_basics/nojs.less', 'app/0_basics/nojs.less');
   this.template('0_basics/variables.less', 'app/0_basics/variables.less');
-  this.template('0_basics/de.json', 'app/0_basics/de.json');
+  this.template('0_basics/de.yaml', 'app/0_basics/de.yaml');
 
   this.directory('1_atoms', 'app/1_atoms');
   this.directory('2_molecules', 'app/2_molecules');

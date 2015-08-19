@@ -1,4 +1,4 @@
-# generator-atomic
+﻿# generator-atomic
 
 This [Yeoman](http://yeoman.io) generator scaffolds an atomic-design templating framework based on the markup language [Jade](http://http://jade-lang.com/).
 It comes bundled with [BabelJS](http://babeljs.io/) for ES6 support, [Twitter Bootstrap](http://getbootstrap.com/), [LESS](http://lesscss.org/), ESLint and a build-in Livereload Server. 
@@ -84,7 +84,7 @@ Create a Release of the Project (bump and tag).
 |   ├── □ 0_basics                        
 |   |   ├── _default.jade                 # HTML Mastertemplate (HTML Header/Footer)
 |   |   ├── controller.js                 # Javascript Main Controller 
-|   |   ├── de.json                       # Content JSON  
+|   |   ├── de.yaml                       # Content YAML
 |   |   ├── main.less                     # Less-file for Module imports
 |   |   ├── variables.less                # Less Variables
 |   |   ├── nojs.less                     # Fallback CSS for Browsers without JS

@@ -3,9 +3,10 @@
 doctype html
 html
   head
-    title <%= projectName %>
+    title= lang.meta.title
     meta(charset='UTF-8')
-    meta(content='', name='description')
+    meta(content=lang.meta.description, name="description")
+    meta(content=lang.meta.keywords, name="keywords")
     meta(content='<%= author %>', name='author')
     meta(content='3 days', name='revisit-after')
     meta(name='viewport', content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no")

@@ -19,8 +19,6 @@
       var language = 'de'; }
     else {
       var language = grunt.option( 'language' ); }
-    // define a base language file
-    var langfile = grunt.file.readYAML('app/0_basics/'+ language +'.yaml');
 
     require('load-grunt-config')(grunt, {
       configPath: path.join(process.cwd(), 'tasks'),
@@ -28,7 +26,7 @@
         folders: folders,
         packageJson: require('./package.json'),
         timestamp: grunt.template.today('dd.mm.yyyy HH:MM:ss'),
-        lang: langfile,
+        lang: grunt.file.readYAML('app/0_basics/'+ language +'.yaml'),
         language: language
       },
       init: true,

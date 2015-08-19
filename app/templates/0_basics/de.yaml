@@ -6,5 +6,5 @@
 
   meta:
     title: <%= projectName %>
-    description: meta description - defined in 0_basics/de.yaml
-    keywords: 'meta keyword, another keyword, 0_basics/de.yaml'
+    description:
+    keywords: ''

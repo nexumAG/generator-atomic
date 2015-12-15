@@ -36,12 +36,12 @@ lint:
   - karma<% } %>
 <%if (galen) { %>
 test:
-  - galen:local
+  - galenframework:local
   - connect:testresults
 
 test:production:
   - connect:dist
-  - galen:local<% } %>
+  - galenframework:local<% } %>
 
 release:
   - bump-only

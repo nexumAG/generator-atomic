@@ -1,5 +1,5 @@
 /**
- * grunt-galen options
+ * grunt-galenframework options
  * @type {Object}
  */
 

@@ -59,7 +59,7 @@
     "grunt-bump": "^0.8.0",
     "grunt-conventional-changelog": "^6.1.0",
     "jshint": "2.9.2",
-    "mocha": "^2.3.3",
+    "mocha": "^3.0.1",
     "pre-commit": "^1.1.2"
   },
   "peerDependencies": {

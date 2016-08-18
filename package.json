@@ -58,7 +58,7 @@
     "grunt": "1.0.1",
     "grunt-bump": "^0.8.0",
     "grunt-conventional-changelog": "^6.1.0",
-    "jshint": "2.9.2",
+    "jshint": "2.9.3",
     "mocha": "^3.0.2",
     "pre-commit": "^1.1.2"
   },

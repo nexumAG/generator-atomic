@@ -19,7 +19,7 @@ build:
   - babel
   - <%= cssPreprocessor %>
   - postcss:dist
-  - parallelize:jade
+  - parallelize:pug
   - copy:dist
   - useminPrepare
   - concat

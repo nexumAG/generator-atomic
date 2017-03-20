@@ -1,7 +1,7 @@
 'use strict';
 
 var path = require('path');
-var assert = require('yeoman-generator').assert;
+var assert = require('yeoman-assert');
 var helpers = require('yeoman-generator').test;
 var os = require('os');
 
@@ -67,7 +67,7 @@ describe('atomic:app', function() {
       'tasks/injector.js',
       'tasks/useminPrepare.js',
       'tasks/combine_mq.js',
-      'tasks/jade.js',
+      'tasks/pug.js',
       'tasks/watch.js',
       'tasks/connect.js',
       'tasks/karma.js',
@@ -75,15 +75,15 @@ describe('atomic:app', function() {
     ]);
   });
 
-  it('creates jade source files', function() {
+  it('creates pug source files', function() {
     assert.file([
-      'app/index.jade',
-      'app/0_basics/_default.jade',
-      'app/1_atoms/index.jade',
-      'app/2_molecules/index.jade',
-      'app/3_organisms/index.jade',
-      'app/4_templates/index.jade',
-      'app/5_pages/index.jade'
+      'app/index.pug',
+      'app/0_basics/_default.pug',
+      'app/1_atoms/index.pug',
+      'app/2_molecules/index.pug',
+      'app/3_organisms/index.pug',
+      'app/4_templates/index.pug',
+      'app/5_pages/index.pug'
     ]);
   });
 
@@ -142,7 +142,7 @@ describe('atomic:app', function() {
     assert.noFileContent('tasks/combine_mq.js', '<%-');
     assert.noFileContent('tasks/eslint.js', '<%-');
     assert.noFileContent('tasks/htmlmin.js', '<%-');
-    assert.noFileContent('tasks/jade.js', '<%-');
+    assert.noFileContent('tasks/pug.js', '<%-');
     assert.noFileContent('tasks/open.js', '<%-');
     assert.noFileContent('tasks/rev.js', '<%-');
     assert.noFileContent('tasks/usemin.js', '<%-');

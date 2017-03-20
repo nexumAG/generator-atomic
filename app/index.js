@@ -200,7 +200,7 @@ Generator.prototype.gruntfile = function gruntfile() {
   this.copy('tasks/clean.js', 'tasks/clean.js');
   this.copy('tasks/connect.js', 'tasks/connect.js');
   this.copy('tasks/copy.js', 'tasks/copy.js');
-  this.copy('tasks/jade.js', 'tasks/jade.js');
+  this.copy('tasks/pug.js', 'tasks/pug.js');
   this.copy('tasks/' + this.cssPreprocessor + '.js', 'tasks/' + this.cssPreprocessor + '.js');
   this.copy('tasks/watch.js', 'tasks/watch.js');
   this.copy('tasks/htmlmin.js', 'tasks/htmlmin.js');
@@ -236,7 +236,7 @@ Generator.prototype.tests = function tests() {
 
 
 Generator.prototype.sourceFiles = function sourceFiles() {
-  this.template('0_basics/_default.jade', 'app/0_basics/_default.jade');
+  this.template('0_basics/_default.pug', 'app/0_basics/_default.pug');
   this.template('0_basics/controller.js', 'app/0_basics/controller.js');
   this.template('0_basics/ie9.' + this.cssPreprocessorExtension, 'app/0_basics/ie9.' + this.cssPreprocessorExtension);
   this.template('0_basics/main.' + this.cssPreprocessorExtension, 'app/0_basics/main.' + this.cssPreprocessorExtension);
@@ -255,7 +255,7 @@ Generator.prototype.sourceFiles = function sourceFiles() {
   this.directory('3_organisms', 'app/3_organisms');
   this.directory('4_templates', 'app/4_templates');
   this.directory('5_pages', 'app/5_pages');
-  this.copy('index.jade', 'app/index.jade');
+  this.copy('index.pug', 'app/index.pug');
 
   this.directory('images', 'app/images');
   this.directory('fonts', 'app/fonts');

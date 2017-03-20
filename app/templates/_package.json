@@ -22,7 +22,7 @@
     "grunt-newer": "*",
     "grunt-parallelize": "*",
 
-    "jade": "^1.11.0",
+    "pug": "^2.0.0-beta6",
     "js-yaml": "^3.4.3",
     "glob": "^5.0.15",
     "express": "^4.13.3",
@@ -31,7 +31,7 @@
     "grunt-open": "^0.2.3",
     "grunt-contrib-connect": "^0.11.2",
 
-    "grunt-contrib-jade": "^0.15.0",
+    "grunt-contrib-pug": "^1.0.0",
 <% if (cssPreprocessor === 'sass') { %>
     "grunt-sass": "*",<% } %><% if (cssPreprocessor === 'less') { %>
     "grunt-contrib-less": "^1.0.1",<% } %>

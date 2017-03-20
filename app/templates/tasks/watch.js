@@ -10,7 +10,7 @@ module.exports = {
   server: {
     files: [
       '<%- folders.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-      '<%- folders.app %>/{,*/,**/}*.jade',
+      '<%- folders.app %>/{,*/,**/}*.pug',
       '<%- folders.app %>/{,*/,**/}*.yaml'
     ]
   },

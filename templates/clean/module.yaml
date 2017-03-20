@@ -1,2 +1,2 @@
 # data-model for <%= modulenameCamelized %>
-# access in jade via yaml.<%= modulenameAlwaysCamelized %>
+# access in Pug via yaml.<%= modulenameAlwaysCamelized %>

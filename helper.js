@@ -80,11 +80,11 @@ module.exports = function(moduletype) {
     var destpath = 'app/' + moduleconfig.modulefolder + '/' + this.modulenameCamelized;
 
     if (moduleconfig.markup !== false) {
-      this.copy(srcpath + 'module.jade', destpath + '/' + this.modulenameCamelized + '.jade');
+      this.copy(srcpath + 'module.pug', destpath + '/' + this.modulenameCamelized + '.pug');
     }
 
     if (this.markupmixins !== false) {
-      this.copy(srcpath + '_module.jade', destpath + '/_' + this.modulenameCamelized + '.jade');
+      this.copy(srcpath + '_module.pug', destpath + '/_' + this.modulenameCamelized + '.pug');
     }
     if (moduleconfig.content !== false) {
       this.copy(srcpath + 'module.yaml', destpath + '/' + this.modulenameAlwaysCamelized + '.yaml');

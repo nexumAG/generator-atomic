@@ -74,24 +74,24 @@ module.exports = function(options) {
           .on('end', done);
       });
 
-      it('creates jade source files', function() {
+      it('creates pug source files', function() {
         assert.file([
-          'app/' + config.modulefolder + '/' + moduleNameCamelized + '/' + moduleNameCamelized + '.jade'
+          'app/' + config.modulefolder + '/' + moduleNameCamelized + '/' + moduleNameCamelized + '.pug'
         ]);
       });
 
-      it('checks EJS Patterns in JADE Files have been resolved', function() {
-        assert.noFileContent('app/' + config.modulefolder + '/' + moduleNameCamelized + '/' + moduleNameCamelized + '.jade', '<%=');
+      it('checks EJS Patterns in pug Files have been resolved', function() {
+        assert.noFileContent('app/' + config.modulefolder + '/' + moduleNameCamelized + '/' + moduleNameCamelized + '.pug', '<%=');
       });
 
       if (config.markupmixins) {
-        it('creates jade mixin files', function() {
+        it('creates pug mixin files', function() {
           assert.file([
-            'app/' + config.modulefolder + '/' + moduleNameCamelized + '/_' + moduleNameCamelized + '.jade'
+            'app/' + config.modulefolder + '/' + moduleNameCamelized + '/_' + moduleNameCamelized + '.pug'
           ]);
         });
-        it('checks EJS Patterns in JadeMixins have been resolved', function() {
-          assert.noFileContent('app/' + config.modulefolder + '/' + moduleNameCamelized + '/_' + moduleNameCamelized + '.jade', '<%=');
+        it('checks EJS Patterns in pugMixins have been resolved', function() {
+          assert.noFileContent('app/' + config.modulefolder + '/' + moduleNameCamelized + '/_' + moduleNameCamelized + '.pug', '<%=');
         });
       }
 

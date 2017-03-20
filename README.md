@@ -1,12 +1,10 @@
 # generator-atomic
 [![npm version](https://badge.fury.io/js/generator-atomic.svg)](https://badge.fury.io/js/generator-atomic)
-[![Build Status](https://travis-ci.org/nexumAG/generator-atomic.svg?branch=master)](https://travis-ci.org/nexumAG/generator-atomic) 
+[![Build Status](https://travis-ci.org/nexumAG/generator-atomic.svg?branch=master)](https://travis-ci.org/nexumAG/generator-atomic)
 [![Dependency Status](https://david-dm.org/nexumAG/generator-atomic.svg)](https://david-dm.org/nexumAG/generator-atomic)
-[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/nexumAg/generator-atomic.svg)](http://isitmaintained.com/project/nexumAG/generator-atomic "Average time to resolve an issue")
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/nexumAg/generator-atomic.svg)](http://isitmaintained.com/project/nexumAG/generator-atomic "Percentage of issues still open")
 
-This [Yeoman](http://yeoman.io) generator scaffolds an atomic-design templating framework based on the markup language [Jade](http://http://jade-lang.com/).
-It comes bundled with [BabelJS](http://babeljs.io/) for ES6 support, [Twitter Bootstrap](http://getbootstrap.com/), [LESS](http://www.lesscss.org/) or [SCSS](http://sass-lang.com/), ESLint and a build-in Livereload Server. 
+This [Yeoman](http://yeoman.io) generator scaffolds an atomic-design templating framework based on the markup language [Pug](http://http://pug-lang.com/).
+It comes bundled with [BabelJS](http://babeljs.io/) for ES6 support, [Twitter Bootstrap](http://getbootstrap.com/), [LESS](http://www.lesscss.org/) or [SCSS](http://sass-lang.com/), ESLint and a build-in Livereload Server.
 Several Subgenerators (atom, molecule, organism...) help you during your project to quickly add new modules and link them properly.
 [Grunt](http://gruntjs.com/) helps you to automate your workflow with several helpful tasks like "build", "release" and "serve" (default). For automated Layout-testing you can use the [Galen Framework](http://galenframework.com/).
 
@@ -85,8 +83,8 @@ Create a Release of the Project (bump and tag).
 ```
 ├── □ app                                   
 |   ├── □ 0_basics                        
-|   |   ├── _default.jade                 # HTML Mastertemplate (HTML Header/Footer)
-|   |   ├── controller.js                 # Javascript Main Controller 
+|   |   ├── _default.pug                 # HTML Mastertemplate (HTML Header/Footer)
+|   |   ├── controller.js                 # Javascript Main Controller
 |   |   ├── basics.yaml                   # Content YAML
 |   |   ├── main.scss                     # Stylesheet-file for Module imports
 |   |   ├── variables.scss                # Stylesheet Variables
@@ -103,10 +101,10 @@ Create a Release of the Project (bump and tag).
 ### Module Directory Layout
 Each Module (atom, molecule, organism...) has this Directory Layout:
 ```
-|   |   ├── index.jade                  # Module Overview Page
+|   |   ├── index.pug                  # Module Overview Page
 |   |   └── □ breadcrumb                  
-|   |       ├── breadcrumb.jade         # Demo: showcase the Module in all available versions
-|   |       ├── _breadcrumb.jade        # Markup: Jade Mixins (with _underscore)
+|   |       ├── breadcrumb.pug         # Demo: showcase the Module in all available versions
+|   |       ├── _breadcrumb.pug        # Markup: Pug Mixins (with _underscore)
 |   |       ├── breadcrumb.js           # Script: ES2015 through BabelJS (not in atoms, templates and pages)
 |   |       ├── breadcrumb.unit.js      # Unit-Test: Karma/Jasmine Unit Test
 |   |       ├── breadcrumb.scss         # Stylesheet

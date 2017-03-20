@@ -1,5 +1,5 @@
 /**
- * grunt-contrib-jade options
+ * grunt-contrib-pug options
  * @type {Object}
  */
 
@@ -11,7 +11,7 @@ module.exports = function (grunt, data) {
       basedir: 'app/',
       data: function (dest, src) {
         var page = src[0].replace('app/', ' ');
-        page = page.replace('.jade','');
+        page = page.replace('.pug','');
         page = page.replace(/\//g,'-');
         page = page.replace(' ','');
         var level = src[0].split('/').length - 2;
@@ -42,8 +42,8 @@ module.exports = function (grunt, data) {
     html: {
       expand: true,
       //flatten: true,
-      //cwd: '<%- folders.app %>/jade',
-      src: ['<%- folders.app %>/{,*/,**/}*.jade', '!**/_*'],
+      //cwd: '<%- folders.app %>/pug',
+      src: ['<%- folders.app %>/{,*/,**/}*.pug', '!**/_*'],
       dest: '<%- folders.tmp %>',
       ext: '.html',
       rename: function(dest, src) {

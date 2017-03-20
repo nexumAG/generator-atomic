@@ -1,4 +1,4 @@
-//- [injector:jademixins]
+//- [injector:pugmixins]
 //- [endinjector]
 doctype html
 html
@@ -8,15 +8,15 @@ html
     meta(content=yaml.basics.meta.description, name='description')
     meta(content=yaml.basics.meta.keywords, name='keywords')
     meta(content='3 days', name='revisit-after')
-    meta(http-equiv="X-UA-Compatible" content="IE=edge")
-    meta(name='viewport', content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1")
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1')
     block meta
 
-    link(type="text/plain" rel="author" href="#{path}humans.txt")
+    link(type='text/plain' rel='author' href=path+'humans.txt')
 
     block head
 
-    link(href='#{path}0_basics/main.css', rel='stylesheet')
+    link(href=path+'0_basics/main.css', rel='stylesheet')
     if level == 0
       // build:css(bower_components) 0_basics/vendor.css
     else if level == 1
@@ -28,7 +28,7 @@ html
     // endbuild
 
     noscript
-      link(href='#{path}0_basics/nojs.css', rel='stylesheet')
+      link(href=path+'0_basics/nojs.css', rel='stylesheet')
     <!--[if lte IE 9]>
     <link href="#{path}0_basics/ie9.css" rel="stylesheet">
     <![endif]-->
@@ -50,5 +50,5 @@ html
     // [injector:js]
     // [endinjector]
 
-    script(src='#{path}0_basics/controller.js')
+    script(src=path+'0_basics/controller.js')
     // endbuild

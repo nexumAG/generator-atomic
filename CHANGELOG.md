@@ -53,7 +53,7 @@
 
 #### Bug Fixes
 
-* **subgenerators:** always use camelized Modulenames in Jade / Less / Scss ([4f87db8a](https://github.com/nexumAG/generator-atomic/commit/4f87db8a))
+* **subgenerators:** always use camelized Modulenames in Pug / Less / Scss ([4f87db8a](https://github.com/nexumAG/generator-atomic/commit/4f87db8a))
 
 
 #### Features
@@ -272,7 +272,7 @@
   * copy karma task ([7be69acf](https://github.com/nexumAG/generator-atomic/commit/7be69acf))
   * add karma unit tests ([53f227f4](https://github.com/nexumAG/generator-atomic/commit/53f227f4))
   * add karma unit tests ([6900b783](https://github.com/nexumAG/generator-atomic/commit/6900b783))
-* **namespace:** use camelized namespacing in jade ([bf7e2ce2](https://github.com/nexumAG/generator-atomic/commit/bf7e2ce2))
+* **namespace:** use camelized namespacing in Pug ([bf7e2ce2](https://github.com/nexumAG/generator-atomic/commit/bf7e2ce2))
 
 
 <a name"0.5.0"></a>

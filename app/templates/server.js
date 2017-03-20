@@ -6,7 +6,7 @@ const url = require('url');
 const express = require('express');
 const glob = require('glob');
 const yaml = require('js-yaml');
-const jade = require('jade');
+const pug = require('pug');
 
 const app = express();
 
@@ -33,7 +33,7 @@ app.use(function(req, res, next) {
       return next(err);
     }
 
-    // prepare global jade path variables
+    // prepare global pug path variables
     let level = req.originalUrl.match(/\//g).length - 1;
     let path = '../'.repeat(level);
 
@@ -58,13 +58,13 @@ app.use(function(req, res, next) {
 
           // if all files are parsed, render template
           if (_fileCount <= 0) {
-            jade.renderFile(_filepath, {
+            pug.renderFile(_filepath, {
                 pretty: true,
                 basedir: __dirname + '/app',
                 level: level,
                 path: path,
                 yaml: contents,
-                timestamp: 'just now :)',
+                timestamp: 'just now',
                 dev: true
               }, function renderfile(err, html) {
                 if (err) {
@@ -96,7 +96,7 @@ const server = app.listen(3000, function() {
 });
 
 function getTemplatePath(requestUrl) {
-  let _extenstions = ['.html', '.htm', '.jade'];
+  let _extenstions = ['.html', '.htm', '.pug'];
   let _parsed = url.parse(requestUrl);
   let _pathname = _parsed.pathname.replace(__dirname + '/app', '');
   let _requestedExt = path.extname(_pathname);
@@ -117,7 +117,7 @@ function getTemplatePath(requestUrl) {
   }
 
   // find the template and return the path
-  let _ext = '.jade';
+  let _ext = '.pug';
   let _filepath = path.join(__dirname + '/app', _pathnameWithoutExt + _ext);
   if (fs.existsSync(_filepath)) {
     return _filepath;

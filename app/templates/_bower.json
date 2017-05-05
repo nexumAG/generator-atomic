@@ -6,6 +6,8 @@
     "bootstrap": "3.3.7"<% } %><% if (cssPreprocessor === 'sass') { %>
     "bootstrap": "4.0.0-alpha.6"<% } %>
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "svg4everybody": "^2.1.1"
+  }
 }
 

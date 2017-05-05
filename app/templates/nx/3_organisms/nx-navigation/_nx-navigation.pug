@@ -1,0 +1,69 @@
+mixin nx-navigation()
+  - var pageName = page.slice(2);
+  - pageName = pageName.slice(0, pageName.indexOf('-'));
+  - var brandLogo = yaml.basics.brandLogo || yaml.nxBasics.brandLogo;
+
+  nav.nx-nav
+    .nx-nav__head
+      img.nx-brand(src=path + brandLogo)
+    ul.nx-nav__list.nx-nav__list--primarylevel
+
+      li.nx-nav__item(class=("atoms" == pageName ) ? "nx-nav__item--open" : "")
+        a.nx-nav__link.nx-nav__link--firstlevel(class=("1_atoms-index" == page ) ? "nx-nav__link--active" : "" href!=path + "1_atoms/index.html")
+          svg.nx-nav__icon(title="Atoms")
+            use(xlink:href=path + "nx/images/svgsprite.svg#atoms")
+          span Atoms
+        ul#atomsNav.nx-nav__list.nx-nav__list--secondlevel
+
+      li.nx-nav__item(class=("molecules" == pageName ) ? "nx-nav__item--open" : "")
+        a.nx-nav__link.nx-nav__link--firstlevel(class=("2_molecules-index" == page) ? "nx-nav__link--active" : "" href!=path + "2_molecules/index.html")
+          svg.nx-nav__icon(title="Molecules")
+            use(xlink:href=path + "nx/images/svgsprite.svg#molecules")
+          span Molecules
+        ul.nx-nav__list.nx-nav__list--secondlevel
+          //- [injector:nxNavMolecules]
+          li.nx-nav__item.nx-nav__item--secondlevel: a.nx-nav__link.nx-nav__link--secondlevel(class=("2_molecules-breadcrumb-breadcrumb" == page) ? "nx-nav__link--active" : "" href=path +"2_molecules/breadcrumb/breadcrumb.html") Breadcrumb
+          li.nx-nav__item.nx-nav__item--secondlevel: a.nx-nav__link.nx-nav__link--secondlevel(class=("2_molecules-mainmenu-mainmenu" == page) ? "nx-nav__link--active" : "" href=path +"2_molecules/mainmenu/mainmenu.html") Mainmenu
+          //- [endinjector]
+
+      li.nx-nav__item(class=("organisms" == pageName ) ? "nx-nav__item--open" : "")
+        a.nx-nav__link.nx-nav__link--firstlevel(class=("3_organisms-index" == page) ? "nx-nav__link--active" : "" href!=path + "3_organisms/index.html")
+          svg.nx-nav__icon(title="Organisms")
+            use(xlink:href=path + "nx/images/svgsprite.svg#organisms")
+          span Organisms
+        ul.nx-nav__list.nx-nav__list--secondlevel
+          //- [injector:nxNavOrganisms]
+          li.nx-nav__item.nx-nav__item--secondlevel: a.nx-nav__link.nx-nav__link--secondlevel(class=("3_organisms-footer-footer" == page) ? "nx-nav__link--active" : "" href=path +"3_organisms/footer/footer.html") Footer
+          li.nx-nav__item.nx-nav__item--secondlevel: a.nx-nav__link.nx-nav__link--secondlevel(class=("3_organisms-header-header" == page) ? "nx-nav__link--active" : "" href=path +"3_organisms/header/header.html") Header
+          //- [endinjector]
+
+      li.nx-nav__item(class=("templates" == pageName ) ? "nx-nav__item--open" : "")
+        a.nx-nav__link.nx-nav__link--firstlevel(class=("4_templates-index" == page) ? "nx-nav__link--active" : "" href!=path + "4_templates/index.html")
+          svg.nx-nav__icon(title="Templates")
+            use(xlink:href=path + "nx/images/svgsprite.svg#templates")
+          span Templates
+        ul.nx-nav__list.nx-nav__list--secondlevel
+          //- [injector:nxNavTemplates]
+          li.nx-nav__item.nx-nav__item--secondlevel: a.nx-nav__link.nx-nav__link--secondlevel(class=("4_templates-test-test" == page) ? "nx-nav__link--active" : "" href=path +"4_templates/test/test.html") Test
+          //- [endinjector]
+
+      li.nx-nav__item(class=("pages" == pageName ) ? "nx-nav__item--open" : "")
+        a.nx-nav__link.nx-nav__link--firstlevel(class=("5_pages-index" == page) ? "nx-nav__link--active" : "" href!=path + "5_pages/index.html")
+          svg.nx-nav__icon(title="Pages")
+            use(xlink:href=path + "nx/images/svgsprite.svg#pages")
+          span Pages
+        ul.nx-nav__list.nx-nav__list--secondlevel
+          //- [injector:nxNavPages]
+          li.nx-nav__item.nx-nav__item--secondlevel: a.nx-nav__link.nx-nav__link--secondlevel(class=("5_pages-test-test" == page) ? "nx-nav__link--active" : "" href=path +"5_pages/test/test.html") Test
+          //- [endinjector]
+
+    #nx-nav__toggle.nx-nav__toggle.nx-nav__toggle--size
+      svg#nx-nav__toggle--icon.nx-nav__icon.nx-nav__icon--toggle(title="toggle")
+        use(xlink:href=path + "nx/images/svgsprite.svg#arrow")
+    #nx-nav__close.nx-nav__toggle.nx-nav__toggle--close
+      svg.nx-nav__icon.nx-nav__icon--toggle(title="close")
+        use(xlink:href=path + "nx/images/svgsprite.svg#close")
+  #nx-nav__open.nx-nav__open
+    svg.nx-nav__icon.nx-nav__icon--open(title="open")
+      use(xlink:href=path + "nx/images/svgsprite.svg#open")
+

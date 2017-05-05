@@ -7,6 +7,8 @@
     "bootstrap": "^4",<% } %>
     "lodash": "^3.10.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "svg4everybody": "^2.1.1"
+  }
 }
 

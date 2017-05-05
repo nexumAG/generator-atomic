@@ -1,0 +1,12 @@
+@import '../fonts/googlefonts/myGoogleFonts.scss';
+@import 'nx-variables.scss';
+
+// // Reset and dependencies
+@import "../../../bower_components/bootstrap/scss/normalize";
+
+// basics
+@import 'nx-layout.scss';
+@import '../1_atoms/nx-type.scss';
+
+// nx-modules
+@import '../3_organisms/nx-navigation/nx-navigation.scss';

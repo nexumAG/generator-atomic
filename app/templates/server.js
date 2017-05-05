@@ -47,6 +47,14 @@ app.use(function(req, res, next) {
         _namespace = _namespace.replace('.yaml', '');
         // load the yaml file
         fs.readFile(filepath, function(err, data) {
+
+          let page = _filepath.replace(/\\/g, '/');
+          page = page.replace('app', '#');
+          let _pageIndex = page.indexOf('#');
+          page = page.slice(_pageIndex + 2);
+          page = page.replace('.pug', '');
+          page = page.replace(/\//g, '-');
+
           _fileCount--;
           // parse yaml
           try {
@@ -62,6 +70,7 @@ app.use(function(req, res, next) {
                 pretty: true,
                 basedir: __dirname + '/app',
                 level: level,
+                page: page,
                 path: path,
                 yaml: contents,
                 timestamp: 'just now',

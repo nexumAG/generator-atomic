@@ -255,12 +255,26 @@ Generator.prototype.sourceFiles = function sourceFiles() {
   this.directory('3_organisms', 'app/3_organisms');
   this.directory('4_templates', 'app/4_templates');
   this.directory('5_pages', 'app/5_pages');
+
   this.copy('index.pug', 'app/index.pug');
 
   this.directory('images', 'app/images');
   this.directory('fonts', 'app/fonts');
 
   this.copy('server.js', 'server.js');
+
+  //nx-navigation
+  this.copy('nx/0_basics/nx-controller.js', 'app/nx/0_basics/nx-controller.js');
+  this.copy('nx/0_basics/nx-layout.' + this.cssPreprocessorExtension, 'app/nx/0_basics/nx-layout.' + this.cssPreprocessorExtension);
+  this.copy('nx/0_basics/nx-main.' + this.cssPreprocessorExtension, 'app/nx/0_basics/nx-main.' + this.cssPreprocessorExtension);
+  this.copy('nx/0_basics/nx-variables.' + this.cssPreprocessorExtension, 'app/nx/0_basics/nx-variables.' + this.cssPreprocessorExtension);
+  this.copy('nx/0_basics/nxBasics.yaml', 'app/nx/0_basics/nxBasics.yaml');
+  this.copy('nx/1_atoms/_nx-type.' + this.cssPreprocessorExtension, 'app/nx/1_atoms/_nx-type.' + this.cssPreprocessorExtension);
+  this.copy('nx/3_organisms/nx-navigation/_nx-navigation.pug', 'app/nx/3_organisms/nx-navigation/_nx-navigation.pug');
+  this.copy('nx/3_organisms/nx-navigation/nx-navigation.js', 'app/nx/3_organisms/nx-navigation/nx-navigation.js');
+  this.copy('nx/3_organisms/nx-navigation/_nx-navigation.' + this.cssPreprocessorExtension, 'app/nx/3_organisms/nx-navigation/_nx-navigation.' + this.cssPreprocessorExtension);
+
+  this.directory('nx/images', 'app/nx/images');
 };
 
 

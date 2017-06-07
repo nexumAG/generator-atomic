@@ -135,7 +135,7 @@ module.exports = {
         '!<%- folders.app %>/{,*/,**/}*.unit.js',
         '!<%- folders.app %>/{,*/,**/}*.galen.js',
         '!<%- folders.app %>/0_basics/**',
-        '!<%= folders.app %>/nx/**'
+        '!<%- folders.app %>/nx/**'
       ]
     }
   },

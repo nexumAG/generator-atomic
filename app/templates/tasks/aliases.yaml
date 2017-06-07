@@ -6,7 +6,7 @@ serve:
   - injector
   - wiredep
   - <%= cssPreprocessor %>
-  - nx<%= cssPreprocessor %>
+  - <%= cssPreprocessor %>:nx<%= cssPreprocessor %>
   - postcss:server
   - babel
   - express
@@ -19,7 +19,7 @@ build:
   - wiredep
   - babel
   - <%= cssPreprocessor %>
-  - nx<%= cssPreprocessor %>
+  - <%= cssPreprocessor %>:nx<%= cssPreprocessor %>
   - postcss:dist
   - parallelize:pug
   - copy:dist

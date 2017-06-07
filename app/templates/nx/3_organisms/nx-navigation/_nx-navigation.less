@@ -1,7 +1,7 @@
-$nav-padding-h: 30px;
-$nav-padding-v: 20px;
+@nav-padding-h: 30px;
+@nav-padding-v: 20px;
 
-$nav-padding-v-2: 10px;
+@nav-padding-v-2: 10px;
 
 .nx-nav {
   position: fixed;
@@ -9,7 +9,7 @@ $nav-padding-v-2: 10px;
   bottom: 0;
   width: 225px;
   z-index: 100;
-  background-color: $nx-gray-dark;
+  background-color: @nx-gray-dark;
   opacity: 1;
   transition: transform .2s ease-in-out;
   overflow: auto;
@@ -18,7 +18,7 @@ $nav-padding-v-2: 10px;
 
 .nx-nav__head {
   text-align: center;
-  font-family: $nx-font-family-base;
+  font-family: @nx-font-family-base;
   background-color: #fff;
   padding: 10px 15px;
 }
@@ -52,14 +52,14 @@ $nav-padding-v-2: 10px;
 }
 
 .nx-nav__link {
-  font-family: $nx-font-family-base;
-  color: $nx-gray-light;
+  font-family: @nx-font-family-base;
+  color: @nx-gray-light;
   transition: color .2s ease-in-out;
   font-size: 14px;
   line-height: 20px;
 
   display: block;
-  padding: $nav-padding-v $nav-padding-h;
+  padding: @nav-padding-v @nav-padding-h;
 
   &:hover,
   &:focus,
@@ -88,7 +88,7 @@ $nav-padding-v-2: 10px;
 }
 
 .nx-nav__link--secondlevel {
-  padding: $nav-padding-v-2 $nav-padding-h;
+  padding: @nav-padding-v-2 @nav-padding-h;
 }
 
 .nx-nav__icon {
@@ -114,7 +114,7 @@ $nav-padding-v-2: 10px;
 
   .nx-nav__link {
     text-align: center;
-    padding: $nav-padding-v 0;
+    padding: @nav-padding-v 0;
   }
 
   .nx-nav__link--active {
@@ -147,7 +147,7 @@ $nav-padding-v-2: 10px;
 }
 
 .nx-nav__open {
-  color: $nx-gray;
+  color: @nx-gray;
   position: fixed;
   cursor: pointer;
   z-index: 99;
@@ -155,7 +155,7 @@ $nav-padding-v-2: 10px;
   width: 50px;
   height: 50px;
 
-  background-color: $nx-gray-dark;
+  background-color: @nx-gray-dark;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.50);
 
   border-radius: 50%;

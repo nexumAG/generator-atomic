@@ -46,11 +46,13 @@
 // Utility classes
 @import "../../bower_components/bootstrap/scss/utilities";
 
+<% if ( navigation ){ %>
 // NX Helper Classes
 //@import "nx-helpers/nx-radiocheckbox";
 @import "nx-helpers/nx-mediaqueries";
 @import "nx-helpers/nx-spacerclasses";
 //@import "nx-helpers/nx-colorclasses";
+<% } %>
 
 // [injector]
 // [endinjector]

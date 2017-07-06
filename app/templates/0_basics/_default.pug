@@ -49,7 +49,10 @@ html
       else { nxBodyClass = ""; noPattern = true}
 
   body(class= _page +' ' + nxBodyClass)
+    <% if ( navigation ){ %>
     +nx-navigation
+    <% } %>
+    +header
     +header
     block content
     if noPattern == true
@@ -71,6 +74,7 @@ html
     script(src=path+'0_basics/controller.js')
     // endbuild
 
+    <% if ( navigation ){ %>
     // nx prototype scripts
     // don't use in production
     if level == 0
@@ -86,3 +90,4 @@ html
     script(src=path + 'nx/0_basics/nx-controller.js')
     // endbuild
     // end nx prototype scripts
+    <% } %>

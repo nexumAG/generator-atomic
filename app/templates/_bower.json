@@ -2,12 +2,12 @@
   "name": "<%= appname %>",
   "version": "0.0.0",
   "dependencies": {
+    <% if ( navigation ){ %>
+    "svg4everybody": "^2.1.1",
+    <% } %>
     "jquery": "3.2.1",<% if (cssPreprocessor === 'less') { %>
     "bootstrap": "3.3.7"<% } %><% if (cssPreprocessor === 'sass') { %>
     "bootstrap": "4.0.0-alpha.6"<% } %>
-  },
-  "devDependencies": {
-    "svg4everybody": "^2.1.1"
   }
 }
 

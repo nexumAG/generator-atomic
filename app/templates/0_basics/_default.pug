@@ -9,7 +9,7 @@ html
     meta(content=yaml.basics.meta.keywords, name='keywords')
     meta(content='3 days', name='revisit-after')
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
-    meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1')
+    meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1')
     block meta
 
     link(type='text/plain' rel='author' href=path+'humans.txt')
@@ -29,9 +29,6 @@ html
 
     noscript
       link(href=path+'0_basics/nojs.css', rel='stylesheet')
-    <!--[if lte IE 9]>
-    <link href="#{path}0_basics/ie9.css" rel="stylesheet">
-    <![endif]-->
   body(class=page)
     +header
     block content

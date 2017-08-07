@@ -39,7 +39,8 @@ module.exports = {
       '<%- folders.app %>/1_atoms/index.pug': [
         '<%- folders.app %>/1_atoms/{,*/}*.pug',
         '!<%- folders.app %>/1_atoms/index.pug',
-        '!<%- folders.app %>/1_atoms/{,*/}_*.pug'
+        '!<%- folders.app %>/1_atoms/{,*/}_*.pug',
+        '!<%- folders.app %>/1_atoms/pattern.pug'
       ],
       '<%- folders.app %>/2_molecules/index.pug': [
         '<%- folders.app %>/2_molecules/{,*/}*.pug',

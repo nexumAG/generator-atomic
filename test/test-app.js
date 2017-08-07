@@ -96,7 +96,6 @@ describe('atomic:app', function() {
   it('creates stylesheet files: ' + cssPreprocessorExtension, function() {
     assert.file([
       'app/0_basics/main.' + cssPreprocessorExtension,
-      'app/0_basics/ie9.' + cssPreprocessorExtension,
       'app/0_basics/nojs.' + cssPreprocessorExtension,
       'app/0_basics/variables.' + cssPreprocessorExtension,
 

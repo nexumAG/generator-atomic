@@ -51,7 +51,7 @@
     "yeoman-assert": "^2.2.1",
     "yeoman-generator": "^0.22.1",
     "yeoman-test": "^1.4.0",
-    "yosay": "^1.1.0"
+    "yosay": "^2.0.0"
   },
   "devDependencies": {
     "fs-extra": "^3.0.1",

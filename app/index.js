@@ -48,11 +48,11 @@ Generator.prototype.promptConfig = function promptConfig() {
       type: 'list',
       name: 'cssPreprocessor',
       message: 'What would you like to use to ' + 'write styles'.blue + '?',
-      choices: ['Sass', 'Less'],
+      choices: ['Bootstrap 4 (Sass)', 'Bootstrap 3 (Less)'],
       filter: function(val) {
         var filterMap = {
-          'Sass': 'sass',
-          'Less': 'less'
+          'Bootstrap 4 (Sass)': 'sass',
+          'Bootstrap 3 (Less)': 'less'
         };
 
         return filterMap[val];
@@ -62,13 +62,13 @@ Generator.prototype.promptConfig = function promptConfig() {
       type: 'confirm',
       name: 'galen',
       message: 'Would you like to use Galen for Layout-Tests?',
-      default: true
+      default: false
     },
     {
       type: 'confirm',
       name: 'karma',
       message: 'Would you like to include Karma / Jasmine for JS Unit-Tests?',
-      default: true
+      default: false
     },
     {
       type: 'confirm',
@@ -238,7 +238,6 @@ Generator.prototype.tests = function tests() {
 Generator.prototype.sourceFiles = function sourceFiles() {
   this.template('0_basics/_default.pug', 'app/0_basics/_default.pug');
   this.template('0_basics/controller.js', 'app/0_basics/controller.js');
-  this.template('0_basics/ie9.' + this.cssPreprocessorExtension, 'app/0_basics/ie9.' + this.cssPreprocessorExtension);
   this.template('0_basics/main.' + this.cssPreprocessorExtension, 'app/0_basics/main.' + this.cssPreprocessorExtension);
   this.template('0_basics/nojs.' + this.cssPreprocessorExtension, 'app/0_basics/nojs.' + this.cssPreprocessorExtension);
   this.template('0_basics/variables.' + this.cssPreprocessorExtension, 'app/0_basics/variables.' + this.cssPreprocessorExtension);

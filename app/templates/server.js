@@ -64,7 +64,7 @@ app.use(function(req, res, next) {
                 level: level,
                 path: path,
                 yaml: contents,
-                timestamp: 'just now',
+                timestamp: 'right now',
                 dev: true
               }, function renderfile(err, html) {
                 if (err) {

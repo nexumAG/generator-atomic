@@ -1,12 +1,11 @@
 @import "variables"; // override bootstrap defaults
-
 // Core variables and mixins
-@import "../../bower_components/bootstrap/scss/variables";
 @import "../../bower_components/bootstrap/scss/mixins";
+@import "../../bower_components/bootstrap/scss/custom";
 
-// // Reset and dependencies
+// Reset and dependencies
 @import "../../bower_components/bootstrap/scss/normalize";
-@import "../../bower_components/bootstrap/scss/print";
+//@import "../../bower_components/bootstrap/scss/print";
 
 // Core CSS
 @import "../../bower_components/bootstrap/scss/reboot";
@@ -18,18 +17,18 @@
 @import "../../bower_components/bootstrap/scss/forms";
 @import "../../bower_components/bootstrap/scss/buttons";
 
-// // Components
-@import "../../bower_components/bootstrap/scss/animation";
-@import "../../bower_components/bootstrap/scss/dropdown";
-@import "../../bower_components/bootstrap/scss/button-group";
-@import "../../bower_components/bootstrap/scss/input-group";
-@import "../../bower_components/bootstrap/scss/custom-forms";
-@import "../../bower_components/bootstrap/scss/nav";
-@import "../../bower_components/bootstrap/scss/navbar";
-@import "../../bower_components/bootstrap/scss/card";
-@import "../../bower_components/bootstrap/scss/breadcrumb";
-@import "../../bower_components/bootstrap/scss/pagination";
-@import "../../bower_components/bootstrap/scss/tags";
+// Components
+//@import "../../bower_components/bootstrap/scss/transitions";
+//@import "../../bower_components/bootstrap/scss/dropdown";
+//@import "../../bower_components/bootstrap/scss/button-group";
+//@import "../../bower_components/bootstrap/scss/input-group";
+//@import "../../bower_components/bootstrap/scss/custom-forms";
+//@import "../../bower_components/bootstrap/scss/nav";
+//@import "../../bower_components/bootstrap/scss/navbar";
+//@import "../../bower_components/bootstrap/scss/card";
+//@import "../../bower_components/bootstrap/scss/breadcrumb";
+//@import "../../bower_components/bootstrap/scss/pagination";
+//@import "../../bower_components/bootstrap/scss/badge";
 //@import "../../bower_components/bootstrap/scss/jumbotron";
 //@import "../../bower_components/bootstrap/scss/alert";
 //@import "../../bower_components/bootstrap/scss/progress";
@@ -47,14 +46,11 @@
 // Utility classes
 @import "../../bower_components/bootstrap/scss/utilities";
 
-
-
-
 // NX Helper Classes
-@import "nx-helpers/nx-radiocheckbox";
+//@import "nx-helpers/nx-radiocheckbox";
 @import "nx-helpers/nx-mediaqueries";
 @import "nx-helpers/nx-spacerclasses";
-@import "nx-helpers/nx-colorclasses";
+//@import "nx-helpers/nx-colorclasses";
 
 // [injector]
 // [endinjector]

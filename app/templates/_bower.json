@@ -2,10 +2,9 @@
   "name": "<%= appname %>",
   "version": "0.0.0",
   "dependencies": {
-    "jquery": "^2.1.4",<% if (cssPreprocessor === 'less') { %>
-    "bootstrap": "^3",<% } %><% if (cssPreprocessor === 'sass') { %>
-    "bootstrap": "^4",<% } %>
-    "lodash": "^3.10.1"
+    "jquery": "3.2.1",<% if (cssPreprocessor === 'less') { %>
+    "bootstrap": "3.3.7"<% } %><% if (cssPreprocessor === 'sass') { %>
+    "bootstrap": "4.0.0-alpha.6"<% } %>
   },
   "devDependencies": {}
 }

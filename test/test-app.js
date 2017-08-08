@@ -2,7 +2,7 @@
 
 var path = require('path');
 var assert = require('yeoman-assert');
-var helpers = require('yeoman-generator').test;
+var helpers = require('yeoman-test');
 var os = require('os');
 
 describe('atomic:app', function() {

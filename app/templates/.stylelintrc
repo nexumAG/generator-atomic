@@ -1,0 +1,17 @@
+{
+  "extends": "stylelint-config-suitcss",
+  "rules": {
+    "rule-properties-order":                  [0, "alphabetical" ],
+
+    "indentation":                            [2, 2, { "except": ["value"] }],
+    "rule-trailing-semicolon":                [2, "always"],
+
+    "block-closing-brace-space-after":        [1, "always-single-line"],
+    "selector-pseudo-element-colon-notation": [1, "single"],
+    "function-url-quotes":                    [1, "none"],
+    "comment-empty-line-before":               0,
+    "number-leading-zero":                    [1, "never"],
+    "string-quotes":                          [2, "single"],
+    "at-rule-empty-line-before":              0
+  }
+}

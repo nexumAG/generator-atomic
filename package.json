@@ -31,7 +31,7 @@
     "url": "https://github.com/michaseel"
   },
   "scripts": {
-    "test": "mocha"
+    "test": ""
   },
   "files": [
     "app",
@@ -47,14 +47,15 @@
   "dependencies": {
     "camelize": "1.0.0",
     "chalk": "^2.1.0",
+    "fs-readdir-recursive": "^1.0.0",
     "underscore.string": "3.3.4",
     "yeoman-assert": "^3.0.0",
-    "yeoman-generator": "^0.22.1",
-    "yeoman-test": "^1.4.0",
-    "yosay": "^2.0.0"
+    "yeoman-generator": "^1.1.1",
+    "yeoman-test": "^1.7.0",
+    "yosay": "^2.0.1"
   },
   "devDependencies": {
-    "fs-extra": "^3.0.1",
+    "fs-extra": "4.0.1",
     "grunt": "1.0.1",
     "grunt-bump": "^0.8.0",
     "grunt-conventional-changelog": "^6.1.0",
@@ -73,8 +74,5 @@
     {
       "type": "MIT"
     }
-  ],
-  "pre-commit": [
-    "test"
   ]
 }

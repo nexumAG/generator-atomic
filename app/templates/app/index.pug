@@ -1,0 +1,23 @@
+extends 0_basics/_default
+
+block content
+  .container
+    .row
+      .col-lg-12
+        h1 <%= projectName %>
+        hr
+    .row
+      .col-lg-6
+        a(href="1_atoms/") Atoms
+        hr
+        a(href="2_molecules/") Molecules
+        hr
+        a(href="3_organisms/") Organisms
+        hr
+        a(href="4_templates/") Templates
+        hr
+        a(href="5_pages/") Pages
+        hr
+    .row
+      .col-lg-12
+        p.small Generated: #{timestamp}

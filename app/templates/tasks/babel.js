@@ -5,7 +5,8 @@
 
 module.exports = {
   options: {
-    sourceMap: true
+    sourceMap: true,
+    presets: ['es2015']
   },
   default: {
     files: [{

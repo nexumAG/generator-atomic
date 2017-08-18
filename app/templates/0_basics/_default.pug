@@ -30,9 +30,9 @@ html
     noscript
       link(href=path+'0_basics/nojs.css', rel='stylesheet')
   body(class=page)
-    +header
+    +header(yaml.header)
     block content
-    +footer
+    +footer(yaml.footer)
     if level == 0
       // build:js({.,.tmp,bower_components}) 0_basics/controller.js
     else if level == 1

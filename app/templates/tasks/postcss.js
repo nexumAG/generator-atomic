@@ -27,12 +27,14 @@ module.exports = {
             'Safari >= 7.1'
           ]
         }),
-        require('cssnano')() // minify the result
+        require('cssnano')({
+          zindex: false
+        }) // minify the result
       ]
     }
   },
   server: {
-    src: ['<%- folders.tmp %>/{,*/,**/}*.css'],
+    src: ['<%= folders.tmp %>/{,*/,**/}*.css'],
     options: {
       processors: [
         require('autoprefixer')({

@@ -5,8 +5,9 @@
 
 module.exports = {
   options: {
-    // change this to '0.0.0.0' to access the server from outside
-    hostname: 'localhost',
+    // change this to 'localhost' to deny access to the server from outside
+    // hostname: '0.0.0.0' allows server access within LAN
+    hostname: '0.0.0.0',
     open: false
   },
   dist: {
@@ -14,7 +15,7 @@ module.exports = {
       port: 3000,
       keepalive: false,
       base: [
-        '<%- folders.dist %>'
+        '<%= folders.dist %>'
       ],
       livereload: false
     }

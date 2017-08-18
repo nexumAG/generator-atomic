@@ -153,7 +153,7 @@ module.exports = {
       '<%- folders.app %>/0_basics/main.<%= cssPreprocessorExtension %>': [
         '<%- folders.app %>/{,*/,**/}*.<%= cssPreprocessorExtension %>',
         '!<%- folders.app %>/0_basics/**',
-        '!<%= folders.app %>/nx/**'
+        '!<%- folders.app %>/nx/**'
       ]
     }
   }<%if (galen) { %>,
@@ -174,7 +174,7 @@ module.exports = {
     files: {
       'tests/galen.test.js': [
         '<%- folders.app %>/{,*/,**/}*.spec',
-        '!<%= folders.app %>/nx/**'
+        '!<%- folders.app %>/nx/**'
       ]
     }
   }<% } %>

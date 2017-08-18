@@ -11,6 +11,7 @@
   "dependencies": {},
   "devDependencies": {
     "grunt": "~1.0.0",
+    "bower": "~1.8.0",
     "time-grunt": "~1.4.0",
     "jit-grunt": "~0.10.0",
     "load-grunt-config": "~0.19.2",

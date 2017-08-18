@@ -34,3 +34,13 @@ you need to have yeoman and generator-atomic installed globally (`npm install -g
 - new template: `yo atomic:template`
 - new page:     `yo atomic:page`
 
+<% if ( navigation ){ %>
+## Customize the brand logo in the navigation
+Per default the nexum logo is shown in the navigation but you can add a your own logo path in the basics.yaml.
+
+```
+├── □ app                                   
+|   ├── □ 0_basics                        
+        └── basics.yaml                   # Content YAML
+```
+<% } %>

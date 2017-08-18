@@ -96,6 +96,7 @@ Create a Release of the Project (bump and tag).
 |   ├── □ 3_organisms                     # Folder for Organisms
 |   ├── □ 4_templates                     # Folder for Templates
 |   └── □ 5_pages                         # Folder for Pages
+|   └── □ nx                              # Folder for nx-navigation, only if navigation is chosen
 ```
 
 ### Module Directory Layout
@@ -110,6 +111,18 @@ Each Module (atom, molecule, organism...) has this Directory Layout:
 |   |       ├── breadcrumb.scss         # Stylesheet
 |   |       ├── breadcrumb.spec         # Test: Galen Specfile for Layout Tests
 |   |       └── breadcrumb.yaml         # Content Model for this module
+```
+
+## Optional Navigation
+While initiating your project you can choose a toggleable navigation to navigate convenient through your atomic patterns.
+
+# Customize the brand logo in the navigation
+Per default the nexum logo is shown in the navigation but you can add a your own logo path in the basics.yaml.
+
+```
+├── □ app                                   
+|   ├── □ 0_basics                        
+        └── basics.yaml                   # Content YAML
 ```
 
 ## Note for Windows-Users:

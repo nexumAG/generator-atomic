@@ -18,5 +18,17 @@ module.exports = {
       dest: '<%- folders.tmp %>/0_basics',
       ext: '.css'
     }]
+  },
+  nxsass: {
+    options: {
+      sourceMap: true
+    },
+    files: [{
+      expand: true,
+      cwd: '<%- folders.app %>/nx/0_basics',
+      src: ['*.<%= cssPreprocessorExtension %>', '!**/_*', '!variables..<%= cssPreprocessorExtension %>'],
+      dest: '<%- folders.tmp %>/nx/0_basics',
+      ext: '.css'
+    }]
   }
 };

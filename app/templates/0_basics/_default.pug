@@ -1,5 +1,9 @@
 //- [injector:pugmixins]
 //- [endinjector]
+
+//- nx prototype mixins
+include ../nx/3_organisms/nx-navigation/_nx-navigation.pug
+
 doctype html
 html
   head
@@ -15,6 +19,10 @@ html
     link(type='text/plain' rel='author' href=path+'humans.txt')
 
     block head
+    // nx prototype styles
+    // don't use for production
+    link(href=path + 'nx/0_basics/nx-main.css', rel='stylesheet')
+    // end nx prototype styles:end
 
     link(href=path+'0_basics/main.css', rel='stylesheet')
     if level == 0
@@ -29,10 +37,26 @@ html
 
     noscript
       link(href=path+'0_basics/nojs.css', rel='stylesheet')
-  body(class=page)
+    -
+      var _page = page.slice(2);
+      var _indexOf = _page.indexOf('-');
+      template = _page.slice(0, _indexOf);
+      var nxBodyClass
+      var noPattern = false;
+
+      if( _page == "pages-index" || _page == "templates-index") { nxBodyClass = "nx-body"}
+      else if (template != "pages" && template != "templates") { nxBodyClass = "nx-body"; noPattern = false }
+      else { nxBodyClass = ""; noPattern = true}
+
+  body(class= _page +' ' + nxBodyClass)
+    <% if ( navigation ){ %>
+    +nx-navigation
+    <% } %>
+    +header
     +header
     block content
-    +footer
+    if noPattern == true
+      +footer
     if level == 0
       // build:js({.,.tmp,bower_components}) 0_basics/controller.js
     else if level == 1
@@ -49,3 +73,21 @@ html
 
     script(src=path+'0_basics/controller.js')
     // endbuild
+
+    <% if ( navigation ){ %>
+    // nx prototype scripts
+    // don't use in production
+    if level == 0
+      // build:js({.,.tmp,bower_components}) nx/0_basics/nx-controller.js
+    else if level == 1
+      // build:js({.,.tmp,bower_components}) ../nx/0_basics/nx-controller.js
+    else
+      // build:js({.,.tmp,bower_components}) ../../nx/0_basics/nx-controller.js
+    // bower:js
+    script(src='/svg4everybody/dist/svg4everybody.js')
+    // endbower
+    script(src=path + 'nx/3_organisms/nx-navigation/nx-navigation.js')
+    script(src=path + 'nx/0_basics/nx-controller.js')
+    // endbuild
+    // end nx prototype scripts
+    <% } %>

@@ -3,6 +3,21 @@
  * @type {Object}
  */
 
+function getConfigurationObject(starttag, endtag) {
+  return {
+    transform: function(filePath) {
+      filePath = filePath.replace('.pug', '.html').replace('/app/', '');
+      var linkTitle = filePath.split('/').pop().replace('.html', '');
+      linkTitle = linkTitle.charAt(0).toUpperCase() + linkTitle.substr(1);
+      var filePathPage = filePath.replace(/\//g, '-').replace('.html', '');
+
+      return 'li.nx-nav__item.nx-nav__item--secondlevel: a.nx-nav__link.nx-nav__link--secondlevel(class=("' + filePathPage + '" == page) ? "nx-nav__link--active" : "" href=path +"' + filePath + '") ' + linkTitle ;
+    },
+    starttag: starttag,
+    endtag: endtag
+  };
+}
+
 module.exports = {
   options: {
 
@@ -20,7 +35,8 @@ module.exports = {
     files: {
       '<%- folders.app %>/0_basics/_default.pug': [
         '<%- folders.app %>/{,*/,**/}_*.pug',
-        '!<%- folders.app %>/0_basics/_default.pug'
+        '!<%- folders.app %>/0_basics/_default.pug',
+        '!<%- folders.app %>/nx/**'
       ]
     }
   },
@@ -63,6 +79,46 @@ module.exports = {
       ]
     }
   },
+  nxNavMolecules: {
+    options: getConfigurationObject('//- [injector:nxNavMolecules]', '//- [endinjector]'),
+    files: {
+      '<%- folders.app %>/nx/3_organisms/nx-navigation/_nx-navigation.pug': [
+        '<%- folders.app %>/2_molecules/{,*/}*.pug',
+        '!<%- folders.app %>/2_molecules/index.pug',
+        '!<%- folders.app %>/2_molecules/{,*/}_*.pug'
+      ]
+    }
+  },
+  nxNavOrganisms: {
+    options: getConfigurationObject('//- [injector:nxNavOrganisms]', '//- [endinjector]'),
+    files: {
+      '<%- folders.app %>/nx/3_organisms/nx-navigation/_nx-navigation.pug': [
+        '<%- folders.app %>/3_organisms/{,*/}*.pug',
+        '!<%- folders.app %>/3_organisms/index.pug',
+        '!<%- folders.app %>/3_organisms/{,*/}_*.pug'
+      ]
+    }
+  },
+  nxNavTemplates: {
+    options: getConfigurationObject('//- [injector:nxNavTemplates]', '//- [endinjector]'),
+    files: {
+      '<%- folders.app %>/nx/3_organisms/nx-navigation/_nx-navigation.pug': [
+        '<%- folders.app %>/4_templates/{,*/}*.pug',
+        '!<%- folders.app %>/4_templates/index.pug',
+        '!<%- folders.app %>/4_templates/{,*/}_*.pug'
+      ]
+    }
+  },
+  nxNavPages: {
+    options: getConfigurationObject('//- [injector:nxNavPages]', '//- [endinjector]'),
+    files: {
+      '<%- folders.app %>/nx/3_organisms/nx-navigation/_nx-navigation.pug': [
+        '<%- folders.app %>/5_pages/{,*/}*.pug',
+        '!<%- folders.app %>/5_pages/index.pug',
+        '!<%- folders.app %>/5_pages/{,*/}_*.pug'
+      ]
+    }
+  },
   // Inject application script files into index.html (doesn't include bower)
   scripts: {
     options: {
@@ -78,7 +134,8 @@ module.exports = {
         '<%- folders.app %>/{,*/,**/}*.js',
         '!<%- folders.app %>/{,*/,**/}*.unit.js',
         '!<%- folders.app %>/{,*/,**/}*.galen.js',
-        '!<%- folders.app %>/0_basics/**'
+        '!<%- folders.app %>/0_basics/**',
+        '!<%- folders.app %>/nx/**'
       ]
     }
   },
@@ -95,7 +152,8 @@ module.exports = {
     files: {
       '<%- folders.app %>/0_basics/main.<%= cssPreprocessorExtension %>': [
         '<%- folders.app %>/{,*/,**/}*.<%= cssPreprocessorExtension %>',
-        '!<%- folders.app %>/0_basics/**'
+        '!<%- folders.app %>/0_basics/**',
+        '!<%= folders.app %>/nx/**'
       ]
     }
   }<%if (galen) { %>,
@@ -115,7 +173,8 @@ module.exports = {
     },
     files: {
       'tests/galen.test.js': [
-        '<%- folders.app %>/{,*/,**/}*.spec'
+        '<%- folders.app %>/{,*/,**/}*.spec',
+        '!<%= folders.app %>/nx/**'
       ]
     }
   }<% } %>

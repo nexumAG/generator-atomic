@@ -1,0 +1,5 @@
+# global data-model
+# access in pug via yaml.basics
+
+# set brand logo for pattern-lab navigation
+brandLogo: "nx/images/nexum_logo_150x150_black.png"

@@ -11,6 +11,7 @@ var Generator = module.exports = function Generator(args, options) {
   this.argument('projectName', { type: String, required: false });
   this.argument('namespace', { type: String, required: false });
   this.argument('author', { type: String, required: false });
+  this.argument('navigaion', { type: Boolean, required: false });
   this.argument('cssPreprocessor', { type: String, required: false });
   this.argument('karma', { type: Boolean, required: false });
   this.argument('galen', { type: Boolean, required: false });
@@ -43,6 +44,12 @@ Generator.prototype.promptConfig = function promptConfig() {
       name:    'author',
       message: 'Whats your name? (the author)',
       store:    true
+    },
+    {
+      type:    'confirm',
+      name:    'navigation',
+      message: 'Would you like to have a navigtion',
+      default: true
     },
     {
       type: 'list',
@@ -97,6 +104,7 @@ Generator.prototype.promptConfig = function promptConfig() {
 
     this.author = props.author || this.author;
     //this.config.set('author', this.author);
+    this.navigation = props.navigation || this.navigation;
 
     this.cssPreprocessor = props.cssPreprocessor || this.cssPreprocessor;
     this.cssPreprocessorExtension = this.cssPreprocessor.replace('sass','scss');
@@ -242,10 +250,12 @@ Generator.prototype.sourceFiles = function sourceFiles() {
   this.template('0_basics/nojs.' + this.cssPreprocessorExtension, 'app/0_basics/nojs.' + this.cssPreprocessorExtension);
   this.template('0_basics/variables.' + this.cssPreprocessorExtension, 'app/0_basics/variables.' + this.cssPreprocessorExtension);
 
-  this.copy('0_basics/nx-helpers/nx-colorclasses.' + this.cssPreprocessorExtension, 'app/0_basics/nx-helpers/nx-colorclasses.' + this.cssPreprocessorExtension);
-  this.copy('0_basics/nx-helpers/nx-mediaqueries.' + this.cssPreprocessorExtension, 'app/0_basics/nx-helpers/nx-mediaqueries.' + this.cssPreprocessorExtension);
-  this.copy('0_basics/nx-helpers/nx-radiocheckbox.' + this.cssPreprocessorExtension, 'app/0_basics/nx-helpers/nx-radiocheckbox.' + this.cssPreprocessorExtension);
-  this.copy('0_basics/nx-helpers/nx-spacerclasses.' + this.cssPreprocessorExtension, 'app/0_basics/nx-helpers/nx-spacerclasses.' + this.cssPreprocessorExtension);
+  if (this.navigation) {
+    this.copy('0_basics/nx-helpers/nx-colorclasses.' + this.cssPreprocessorExtension, 'app/0_basics/nx-helpers/nx-colorclasses.' + this.cssPreprocessorExtension);
+    this.copy('0_basics/nx-helpers/nx-mediaqueries.' + this.cssPreprocessorExtension, 'app/0_basics/nx-helpers/nx-mediaqueries.' + this.cssPreprocessorExtension);
+    this.copy('0_basics/nx-helpers/nx-radiocheckbox.' + this.cssPreprocessorExtension, 'app/0_basics/nx-helpers/nx-radiocheckbox.' + this.cssPreprocessorExtension);
+    this.copy('0_basics/nx-helpers/nx-spacerclasses.' + this.cssPreprocessorExtension, 'app/0_basics/nx-helpers/nx-spacerclasses.' + this.cssPreprocessorExtension);
+  }
 
   this.template('0_basics/basics.yaml', 'app/0_basics/basics.yaml');
 
@@ -254,12 +264,27 @@ Generator.prototype.sourceFiles = function sourceFiles() {
   this.directory('3_organisms', 'app/3_organisms');
   this.directory('4_templates', 'app/4_templates');
   this.directory('5_pages', 'app/5_pages');
+
   this.copy('index.pug', 'app/index.pug');
 
   this.directory('images', 'app/images');
   this.directory('fonts', 'app/fonts');
 
   this.copy('server.js', 'server.js');
+
+  //nx-navigation
+  if (this.navigation) {
+    this.copy('nx/0_basics/nx-controller.js', 'app/nx/0_basics/nx-controller.js');
+    this.copy('nx/0_basics/nx-layout.' + this.cssPreprocessorExtension, 'app/nx/0_basics/nx-layout.' + this.cssPreprocessorExtension);
+    this.copy('nx/0_basics/nx-main.' + this.cssPreprocessorExtension, 'app/nx/0_basics/nx-main.' + this.cssPreprocessorExtension);
+    this.copy('nx/0_basics/nx-variables.' + this.cssPreprocessorExtension, 'app/nx/0_basics/nx-variables.' + this.cssPreprocessorExtension);
+    this.copy('nx/0_basics/nxBasics.yaml', 'app/nx/0_basics/nxBasics.yaml');
+    this.copy('nx/1_atoms/_nx-type.' + this.cssPreprocessorExtension, 'app/nx/1_atoms/_nx-type.' + this.cssPreprocessorExtension);
+    this.copy('nx/3_organisms/nx-navigation/_nx-navigation.pug', 'app/nx/3_organisms/nx-navigation/_nx-navigation.pug');
+    this.copy('nx/3_organisms/nx-navigation/nx-navigation.js', 'app/nx/3_organisms/nx-navigation/nx-navigation.js');
+    this.copy('nx/3_organisms/nx-navigation/_nx-navigation.' + this.cssPreprocessorExtension, 'app/nx/3_organisms/nx-navigation/_nx-navigation.' + this.cssPreprocessorExtension);
+    this.directory('nx/images', 'app/nx/images');
+  }
 };
 
 

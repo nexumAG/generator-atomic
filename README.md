@@ -116,7 +116,7 @@ Each Module (atom, molecule, organism...) has this Directory Layout:
 ## Optional Navigation
 While initiating your project you can choose a toggleable navigation to navigate convenient through your atomic patterns.
 
-# Customize the brand logo in the navigation
+### Customize the brand logo in the navigation
 Per default the nexum logo is shown in the navigation but you can add a your own logo path in the basics.yaml.
 
 ```

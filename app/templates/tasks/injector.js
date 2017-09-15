@@ -2,7 +2,7 @@
  * grunt-injector options
  * @type {Object}
  */
-
+<%if (navigation) { %>
 function getConfigurationObject(starttag, endtag) {
   return {
     transform: function(filePath) {
@@ -17,7 +17,7 @@ function getConfigurationObject(starttag, endtag) {
     endtag: endtag
   };
 }
-
+<% } %>
 module.exports = {
   options: {
 
@@ -78,7 +78,7 @@ module.exports = {
         '!<%- folders.app %>/5_pages/{,*/}_*.pug'
       ]
     }
-  },
+  }<%if (navigation) { %>,
   nxNavMolecules: {
     options: getConfigurationObject('//- [injector:nxNavMolecules]', '//- [endinjector]'),
     files: {
@@ -118,7 +118,7 @@ module.exports = {
         '!<%- folders.app %>/5_pages/{,*/}_*.pug'
       ]
     }
-  },
+  }<% } %>,
   // Inject application script files into index.html (doesn't include bower)
   scripts: {
     options: {

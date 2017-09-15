@@ -18,7 +18,7 @@ module.exports = {
       dest: '<%- folders.tmp %>/0_basics',
       ext: '.css'
     }]
-  },
+  }<% if (navigation) { %>,
   nxsass: {
     options: {
       sourceMap: true
@@ -30,5 +30,5 @@ module.exports = {
       dest: '<%- folders.tmp %>/nx/0_basics',
       ext: '.css'
     }]
-  }
+  }<% } %>
 };
